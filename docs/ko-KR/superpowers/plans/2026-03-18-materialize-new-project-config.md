@@ -1,6 +1,6 @@
 # 초기화 시 new-project config 완전 구체화
 
-> **에이전트 작업자를 위한 안내:** 필수 하위 기술: superpowers:subagent-driven-development(권장) 또는 superpowers:executing-plans를 사용하여 이 계획을 작업 단위로 구현하십시오. 단계는 체크박스(`- [ ]`) 형식으로 진행 상황을 추적합니다.
+> **에이전트 작업자를 위한 안내:** 필수 하위 기술: superpowers:subagent-driven-development(권장) 또는 superpowers:executing-plans를 사용하여 이 계획을 작업 단위로 구현하세요. 단계는 체크박스(`- [ ]`) 형식으로 진행 상황을 추적합니다.
 
 **목표:** `/gsd:new-project`가 `.planning/config.json`을 생성할 때, 파일에 사용자가 선택한 6개 키만이 아닌 모든 유효한 기본값이 포함되도록 하여 개발자가 소스 코드를 읽지 않고도 모든 설정을 확인할 수 있게 합니다.
 
@@ -235,7 +235,7 @@ node --test tests/config.test.cjs 2>&1 | grep -E "config-new-project|FAIL|Error"
 
 - [ ] **Step 1.3: config.cjs에 `buildNewProjectConfig`와 `cmdConfigNewProject` 구현**
 
-`get-shit-done/bin/lib/config.cjs`에서 `validateKnownConfigKeyPath` 함수 뒤(약 35번째 줄)와 `ensureConfigFile` 앞에 다음을 추가하십시오:
+`get-shit-done/bin/lib/config.cjs`에서 `validateKnownConfigKeyPath` 함수 뒤(약 35번째 줄)와 `ensureConfigFile` 앞에 다음을 추가하세요:
 
 ```js
 /**
@@ -361,7 +361,7 @@ function cmdConfigNewProject(cwd, choicesJson, raw) {
 }
 ```
 
-`config.cjs` 하단의 `module.exports`에 `cmdConfigNewProject`도 추가하십시오.
+`config.cjs` 하단의 `module.exports`에 `cmdConfigNewProject`도 추가하세요.
 
 - [ ] **Step 1.4: 테스트 실행하여 통과 확인**
 
@@ -390,7 +390,7 @@ git commit -m "feat: add config-new-project command for full config materializat
 
 - [ ] **Step 2.1: gsd-tools.cjs의 switch에 case 추가**
 
-`config-get` case 뒤(약 401번째 줄)에 다음을 추가하십시오:
+`config-get` case 뒤(약 401번째 줄)에 다음을 추가하세요:
 
 ```js
     case 'config-new-project': {
@@ -399,7 +399,7 @@ git commit -m "feat: add config-new-project command for full config materializat
     }
 ```
 
-178번째 줄의 usage 문자열도 `config-new-project`를 포함하도록 업데이트하십시오:
+178번째 줄의 usage 문자열도 `config-new-project`를 포함하도록 업데이트하세요:
 
 현재: `...config-ensure-section, init`
 변경: `...config-ensure-section, config-new-project, init`
@@ -447,7 +447,7 @@ git commit -m "feat: register config-new-project in gsd-tools CLI router"
 
 - [ ] **Step 3.1: Step 2a(auto 모드) 업데이트**
 
-Step 2a에서 config.json을 생성하는 블록을 찾으십시오:
+Step 2a에서 config.json을 생성하는 블록을 찾으세요:
 
 ```markdown
 Create `.planning/config.json` with mode set to "yolo":
@@ -462,7 +462,7 @@ Create `.planning/config.json` with mode set to "yolo":
 
 ```
 
-인라인 JSON 작성 지침을 다음으로 교체하십시오:
+인라인 JSON 작성 지침을 다음으로 교체하세요:
 
 ```markdown
 Create `.planning/config.json` using the CLI (fills in all defaults automatically):
@@ -494,7 +494,7 @@ The command merges your selections with all runtime defaults (`search_gitignored
 
 - [ ] **Step 3.2: Step 5(대화형 모드) 업데이트**
 
-Step 5에서 config.json을 생성하는 블록을 찾으십시오:
+Step 5에서 config.json을 생성하는 블록을 찾으세요:
 
 ```markdown
 Create `.planning/config.json` with all settings:
@@ -508,7 +508,7 @@ Create `.planning/config.json` with all settings:
 
 ```
 
-다음으로 교체하십시오:
+다음으로 교체하세요:
 
 ```markdown
 Create `.planning/config.json` using the CLI (fills in all defaults automatically):

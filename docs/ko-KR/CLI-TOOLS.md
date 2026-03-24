@@ -1,6 +1,6 @@
 # GSD CLI 도구 레퍼런스
 
-> `gsd-tools.cjs`에 대한 프로그래밍 방식 API 레퍼런스입니다. 워크플로우와 에이전트가 내부적으로 사용합니다. 사용자 대면 명령어는 [Command Reference](COMMANDS.md)를 참조하십시오.
+> `gsd-tools.cjs`에 대한 프로그래밍 방식 API 레퍼런스입니다. 워크플로우와 에이전트가 내부적으로 사용합니다. 사용자 대면 명령어는 [Command Reference](COMMANDS.md)를 참조하세요.
 
 ---
 
@@ -337,7 +337,7 @@ node gsd-tools.cjs audit-uat
 node gsd-tools.cjs commit <message> [--files f1 f2] [--amend] [--no-verify]
 ```
 
-> **`--no-verify`**: 사전 커밋 훅을 건너뜁니다. 빌드 잠금 경쟁을 피하기 위해 웨이브 기반 실행 중 병렬 executor 에이전트가 사용합니다 (예: Rust 프로젝트의 cargo lock 충돌). 오케스트레이터는 각 웨이브 완료 후 훅을 한 번 실행합니다. 순차 실행 중에는 `--no-verify`를 사용하지 마십시오 — 훅이 정상적으로 실행되어야 합니다.
+> **`--no-verify`**: 사전 커밋 훅을 건너뜁니다. 빌드 잠금 경쟁을 피하기 위해 웨이브 기반 실행 중 병렬 executor 에이전트가 사용합니다 (예: Rust 프로젝트의 cargo lock 충돌). 오케스트레이터는 각 웨이브 완료 후 훅을 한 번 실행합니다. 순차 실행 중에는 `--no-verify`를 사용하지 마세요 — 훅이 정상적으로 실행되어야 합니다.
 
 ```bash
 # 웹 검색 (Brave API 키 필요)

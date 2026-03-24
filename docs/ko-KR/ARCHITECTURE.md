@@ -1,6 +1,6 @@
 # GSD 아키텍처
 
-> 기여자와 고급 사용자를 위한 시스템 아키텍처입니다. 사용자 문서는 [Feature Reference](FEATURES.md) 또는 [User Guide](USER-GUIDE.md)를 참조하십시오.
+> 기여자와 고급 사용자를 위한 시스템 아키텍처입니다. 사용자 문서는 [Feature Reference](FEATURES.md) 또는 [User Guide](USER-GUIDE.md)를 참조하세요.
 
 ---
 
