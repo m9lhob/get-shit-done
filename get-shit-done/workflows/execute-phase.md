@@ -1080,6 +1080,29 @@ node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" commit "docs(phase-{X}): co
 ```
 </step>
 
+<step name="auto_copy_learnings">
+**Auto-copy phase learnings to global store (when enabled).**
+
+This step runs AFTER phase completion and SUMMARY.md is written. It copies any LEARNINGS.md
+entries from the completed phase to the global learnings store at `~/.gsd/knowledge/`.
+
+**Check config gate:**
+```bash
+GL_ENABLED=$(node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" config-get features.global_learnings --raw 2>/dev/null || echo "false")
+```
+
+**If `GL_ENABLED` is not `true`:** Skip this step entirely (feature disabled by default).
+
+**If enabled:**
+
+1. Check if LEARNINGS.md exists in the phase directory (use the `phase_dir` value from init context)
+2. If found, copy to global store:
+```bash
+node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" learnings copy 2>/dev/null || echo "⚠ Learnings copy failed — continuing"
+```
+Copy failure must NOT block phase completion.
+</step>
+
 <step name="update_project_md">
 **Evolve PROJECT.md to reflect phase completion (prevents planning document drift — #956):**
 
